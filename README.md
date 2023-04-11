@@ -1,1 +1,1 @@
-# ISA2-235426-260641-258216
+### Equipo 1, N7A: Ingeniería de Software Ágil 2
