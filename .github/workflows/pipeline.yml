@@ -1,0 +1,53 @@
+name: dotnet package
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: ["5.0"]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+      - name: Install dependencies
+        run: |
+          pwd
+          ls -la
+          dotnet restore
+        working-directory: /home/runner/work/ISA2-235426-260641-258216/Codigo/Backend/ArenaGestor/ArenaGestor.API
+      - name: Build
+        run:  dotnet build ./Codigo/Backend/ArenaGestor/ArenaGestor.sln
+      - name: Test
+        run: dotnet test ./Codigo/Backend/ArenaGestor/ArenaGestor.sln --filter "FullyQualifiedName!~Specs&FullyQualifiedName!~TestBugParser" --no-build --verbosity normal -l:trx
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.2
+        with:
+          name: GitHubActionsDotNetDownloadableArtifact
+          path: /home/runner/work/ISA2-235426-260641-258216/Codigo/Backend/ArenaGestor/bin/Release/net5.0/.
+      - name: Get a report
+        uses: dorny/test-reporter@v1
+        with:
+          name: DotNET Tests Results
+          path: '**/*.trx'
+          reporter: dotnet-trx
+          fail-on-error: 'false'
+        
+      - name: Upload tests results artifact
+        uses: actions/upload-artifact@v2.2.2
+        with:
+          name: GitHubActionsTestsResults
+          path: '**/*.trx'
+      - name: Install dependencies
+        run : npm install --force
+        working-directory: /home/runner/work/ISA2-235426-260641-258216/Codigo/Frontend/ArenaGestorFront
+      - name: install angular 
+        run: npm install -g @angular/cli
+      - name: Build angular
+        run : ng build
+        working-directory: /home/runner/work/obligatorio-equipo-2/obligatorio-equipo-2/Codigo/Frontend/ArenaGestorFront
