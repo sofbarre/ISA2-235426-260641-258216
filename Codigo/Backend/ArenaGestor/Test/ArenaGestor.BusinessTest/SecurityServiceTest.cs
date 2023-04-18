@@ -172,6 +172,21 @@ namespace ArenaGestor.BusinessTest
             bool result = securityServiceMock.UserHaveRole(RoleCode.Vendedor, randomToken);
             Assert.IsFalse(result);
         }
+        [TestMethod]
+        public void LogoutOkArtista()
+        {
+            userOK.Roles.Clear();
+            userOK.Roles.Add(new UserRole()
+            {
+                RoleId = RoleCode.Artista
+            });
+            sessionManagement.Setup(x => x.GetSessions(It.IsAny<Func<Session, bool>>())).Returns(new List<Session>() { sessionOk });
+            sessionManagement.Setup(x => x.DeleteSession(It.IsAny<Session>()));
+            sessionManagement.Setup(x => x.Save());
+            securityServiceMock.Logout("xxxx");
+            sessionManagement.VerifyAll();
+            usersManagement.VerifyAll();
+        }
 
     }
 }
