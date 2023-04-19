@@ -21,7 +21,11 @@ jobs:
       run: dotnet restore
 
     - name: build aplicacion
-      working-directory: ./Codigo/Backend/ArenaGestor/ArenaGestor.API
+      working-directory: ./Codigo/Backend/ArenaGestor/ArenaGestor.API/
+      run: dotnet build --configuration Realese --no-restore 
+      
+    - name: build aplicacion para test
+      working-directory: ./Codigo/Backend/ArenaGestor/
       run: dotnet build --configuration Realese --no-restore 
 
     - name: Test APITest
