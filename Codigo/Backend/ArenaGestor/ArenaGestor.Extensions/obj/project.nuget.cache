@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OTuxSVLnl5t8AWcyiO2VcThdRe6RuQs6qA6/CKephjqix7lYfkTHqBchGbmJ6OF076W6Vp2kVA9IobBwJ595qw==",
+  "dgSpecHash": "vremoBiNDv7TqMCeRPqlE1EJSRS2DaoEyAvLmrUPXlPZN/+fhqCM47pgUtS2T+13Tn4aJJy3CbOpYngIpTPUrg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bruno\\OneDrive\\Escritorio\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.Extensions\\ArenaGestor.Extensions.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Sofia\\Documents\\Documentos Sofi\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.Extensions\\ArenaGestor.Extensions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sofia\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sofia\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Sofia\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
