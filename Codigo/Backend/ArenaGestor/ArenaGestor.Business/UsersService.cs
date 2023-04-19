@@ -122,6 +122,11 @@ namespace ArenaGestor.Business
                 throw new NullReferenceException($"The user with identifier: {user.UserId} doesn't exists.");
             }
 
+            if (userToUpdate.Roles.Count <= 0)
+            {
+                throw new ArgumentException($"The user must have a role");
+            }
+
             user.Email = userToUpdate.Email;
             user.Password = userToUpdate.Password;
 

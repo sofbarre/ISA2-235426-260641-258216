@@ -40,6 +40,8 @@ export class UserUpdateComponent implements OnInit {
   }
 
   Confirmar() {
+    if (this.model.roles.length > 0) {
+
     this.service.Update(this.model).subscribe(res => {
       this.toastr.success("Usuario actualizado correctamente", "Éxito")
       this.router.navigate(["/administracion/usuarios"])
@@ -47,5 +49,9 @@ export class UserUpdateComponent implements OnInit {
       err => {
         this.toastr.error(err.error, "Error")
       })
+    }else{
+      this.toastr.error("Debe seleccionar al menos un rol ", "Error")
+
+    }
   }
 }

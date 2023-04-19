@@ -5,6 +5,7 @@ using ArenaGestor.BusinessInterface;
 using ArenaGestor.Domain;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 namespace ArenaGestor.API.Controllers
@@ -66,11 +67,19 @@ namespace ArenaGestor.API.Controllers
         [HttpPut("loggedIn")]
         public IActionResult PutUserLoggedIn([FromBody] UserUpdateUserDto updateUser)
         {
-            var token = this.HttpContext.Request.Headers["token"];
-            var user = mapper.Map<User>(updateUser);
-            var result = userService.UpdateUser(token, user);
-            var resultDto = mapper.Map<UserResultUserDto>(result);
-            return Ok(resultDto);
+            try
+            {
+                var token = this.HttpContext.Request.Headers["token"];
+                var user = mapper.Map<User>(updateUser);
+                var result = userService.UpdateUser(token, user);
+                var resultDto = mapper.Map<UserResultUserDto>(result);
+                return Ok(resultDto);
+            }
+            catch(ArgumentException e)
+            {
+                throw e;
+            }
+          
 
         }
 
