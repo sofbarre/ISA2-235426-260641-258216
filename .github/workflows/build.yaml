@@ -32,4 +32,17 @@ jobs:
       - name: build angular ap
         working-directory: ./Codigo/Frontend/ArenaGestorFront/
         run: npm run build
+
+      - name: Test APITest
+        working-directory: ./Codigo/Backend/ArenaGestor/Test/ArenaGestor.APITest/
+        run: dotnet test --no-build --verbosity normal
+      
+      - name: Test BusinessTest
+        working-directory: ./Codigo/Backend/ArenaGestor/Test/ArenaGestor.BusinessTest/
+        run: dotnet test --no-build --verbosity normal
+      
+      - name: Test DataAccessTest
+        working-directory: ./Codigo/Backend/ArenaGestor/Test/ArenaGestor.DataAccessTest/
+        run: dotnet test --no-build --verbosity normal
+      
        
