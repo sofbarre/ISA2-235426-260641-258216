@@ -24,3 +24,12 @@ jobs:
       - name: build aplicacion
         working-directory: ./Codigo/Backend/ArenaGestor/ArenaGestor.API
         run: dotnet build --configuration Realese --no-restore 
+  
+      - name: npm install
+        working-directory: ./Codigo/Frontend/ArenaGestorFront/
+        run: npm ci
+      
+      - name: build angular ap
+        working-directory: ./Codigo/Frontend/ArenaGestorFront/
+        run: npm run build
+       
