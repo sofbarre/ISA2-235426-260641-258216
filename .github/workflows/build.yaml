@@ -9,48 +9,52 @@ jobs:
       matrix: 
         dotnetversion: ['5.0.x']
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Set .net
-        uses: actions/setup-dotnet@v3
-        with: 
-          dotnet-version: ${{matrix.dotnetversion}}
+    - uses: actions/checkout@v3
+    
+    - name: Set .net
+      uses: actions/setup-dotnet@v3
+      with: 
+        dotnet-version: ${{matrix.dotnetversion}}
 
-      - name: restaurar dependencias
-        working-directory: ./Codigo/Backend/ArenaGestor/
-        run: dotnet restore
+    - name: restaurar dependencias
+      working-directory: ./Codigo/Backend/ArenaGestor/
+      run: dotnet restore
 
-      - name: build aplicacion
-        working-directory: ./Codigo/Backend/ArenaGestor/ArenaGestor.API
-        run: dotnet build --configuration Realese --no-restore 
+    - name: build aplicacion
+      working-directory: ./Codigo/Backend/ArenaGestor/ArenaGestor.API/
+      run: dotnet build --configuration Realese --no-restore 
+      
+    - name: build aplicacion para test
+      working-directory: ./Codigo/Backend/ArenaGestor/
+      run: dotnet build --configuration Debug --no-restore 
 
-      - name: Test APITest
-        working-directory: ./Codigo/Backend/ArenaGestor/Test/ArenaGestor.APITest/
-        run: dotnet test --no-build --verbosity normal
-      
-      - name: Test BusinessTest
-        working-directory: ./Codigo/Backend/ArenaGestor/Test/ArenaGestor.BusinessTest/
-        run: dotnet test --no-build --verbosity normal
-      
-      - name: Test DataAccessTest
-        working-directory: ./Codigo/Backend/ArenaGestor/Test/ArenaGestor.DataAccessTest/
-        run: dotnet test --no-build --verbosity normal
+    - name: Test APITest
+      working-directory: ./Codigo/Backend/ArenaGestor/Test/ArenaGestor.APITest/
+      run: dotnet test --no-build --verbosity normal
+    
+    - name: Test BusinessTest
+      working-directory: ./Codigo/Backend/ArenaGestor/Test/ArenaGestor.BusinessTest/
+      run: dotnet test --no-build --verbosity normal
+    
+    - name: Test DataAccessTest
+      working-directory: ./Codigo/Backend/ArenaGestor/Test/ArenaGestor.DataAccessTest/
+      run: dotnet test --no-build --verbosity normal
 
   frontend:
-    name: build backend
+    name: build frontend
     runs-on: ubuntu-latest
     strategy: 
       matrix: 
         nodeversion: ['16.x']
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: npm install
-        working-directory: ./Codigo/Frontend/ArenaGestorFront/
-        run: npm ci
-      
-      - name: build angular ap
-        working-directory: ./Codigo/Frontend/ArenaGestorFront/
-        run: npm run build
+    - uses: actions/checkout@v3
+    
+    - name: npm install
+      working-directory: ./Codigo/Frontend/ArenaGestorFront/
+      run: npm ci
+    
+    - name: build angular ap
+      working-directory: ./Codigo/Frontend/ArenaGestorFront/
+      run: npm run build
       
        
