@@ -22,7 +22,7 @@ namespace ArenaGestor.Business
 
         public void InsertSnack(Snack snack)
         {
-            if (snack.Name.Trim().Equals("") || snack.Price < 0)
+            if (snack.Name.Trim().Length==0 || snack.Price < 0)
             {
                 throw new Exception("Precio o nombre de snack no validos");
             }

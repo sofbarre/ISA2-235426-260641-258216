@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 namespace ArenaGestor.API.Controllers
 {
-    [Route("[controller]")]
+    [Route("snacks")]
     [ApiController]
     [ExceptionFilter]
     public class SnacksController : ControllerBase, ISnackAppService
@@ -26,14 +26,12 @@ namespace ArenaGestor.API.Controllers
             this.mapper = mapper;
             this.snackService = snackService;   
         }
-        //[AuthorizationFilter(RoleCode.Administrador)]
         [HttpGet]
         public IActionResult GetSnacks()
         {
             var result = snackService.GetSnacks();
             return Ok(result);
         }
-        //[AuthorizationFilter(RoleCode.Administrador)]
         [HttpPost]
         public IActionResult PostSnack([FromBody] SnackPostDto snack)
         {
@@ -53,7 +51,6 @@ namespace ArenaGestor.API.Controllers
                 return NotFound(ex.Message);
             }
         }
-        //[AuthorizationFilter(RoleCode.Administrador)]
         [HttpPut("{snackId}")]
         public IActionResult PutSnack([FromRoute]int snackId,[FromBody] SnackPutDto snack)
         {
@@ -73,7 +70,6 @@ namespace ArenaGestor.API.Controllers
                 return NotFound(ex.Message);
             }
         }
-        //[AuthorizationFilter(RoleCode.Administrador)]
         [HttpGet("{snackId}")]
         public IActionResult GetSnackById([FromRoute] int snackId)
         {
@@ -86,7 +82,6 @@ namespace ArenaGestor.API.Controllers
                 return NotFound(ex.Message);
             }
         }
-        //[AuthorizationFilter(RoleCode.Administrador)]
         [HttpDelete("{snackId}")]
         public IActionResult DeleteSnack([FromRoute]int snackId)
         {

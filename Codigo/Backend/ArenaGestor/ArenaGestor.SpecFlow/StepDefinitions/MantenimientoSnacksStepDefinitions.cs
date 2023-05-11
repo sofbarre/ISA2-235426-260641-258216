@@ -55,7 +55,7 @@ namespace ArenaGestor.SpecFlow.StepDefinitions
         {
             snack.Description = description;
         }
-        [Given(@"a snack price ""(.*)""")]
+        [Given(@"a snack price (.*)")]
         public void GivenASnackWithPrice(int price)
         {
             snack.Price = price;
@@ -72,7 +72,7 @@ namespace ArenaGestor.SpecFlow.StepDefinitions
         {
             string requestBody = JsonConvert.SerializeObject(snack);
 
-            var request = new HttpRequestMessage(this.httpMethod, $"http://localhost:48227/api/{url + routeParams}")
+            var request = new HttpRequestMessage(this.httpMethod, $"http://localhost:48227/{url + routeParams}")
             {
                 Content = new StringContent(requestBody)
                 {

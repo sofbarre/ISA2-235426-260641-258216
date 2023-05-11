@@ -87,11 +87,11 @@ Link to a feature: [Calculator](ArenaGestor.SpecFlow/Features/Calculator.feature
         [Xunit.SkippableFactAttribute(DisplayName="Obtener snacks")]
         [Xunit.TraitAttribute("FeatureTitle", "ManteniminetoSnacks")]
         [Xunit.TraitAttribute("Description", "Obtener snacks")]
-        [Xunit.TraitAttribute("Category", "GetSnacks")]
+        [Xunit.TraitAttribute("Category", "MantenimientoSnacks")]
         public virtual void ObtenerSnacks()
         {
             string[] tagsOfScenario = new string[] {
-                    "GetSnacks"};
+                    "MantenimientoSnacks"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Obtener snacks", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
@@ -121,7 +121,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.Then("the result should be the code \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be the code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -159,13 +159,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("a \"get\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 16
- testRunner.And("a snack with id \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("a snack with id 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
  testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 18
- testRunner.Then("the result should be the code \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be the code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -203,13 +203,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("a \"get\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 22
- testRunner.And("a snack with \"10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("a snack with id 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 23
  testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 24
- testRunner.Then("the result should be the code \"404\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be the code 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -250,7 +250,7 @@ testRunner.Given("a snack name \"Papas\"", ((string)(null)), ((TechTalk.SpecFlow
 testRunner.And("a snack description \"Papas Lays\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 29
-testRunner.And("a snack price \"20\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a snack price 20", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 30
 testRunner.And("a \"post\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -259,7 +259,7 @@ testRunner.And("a \"post\" request of snacks", ((string)(null)), ((TechTalk.Spec
 testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 32
-testRunner.Then("the result should be the code \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the result should be the code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -300,7 +300,7 @@ testRunner.Given("a snack name \"Papas\"", ((string)(null)), ((TechTalk.SpecFlow
 testRunner.And("a snack description \"Papas Lays\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 37
-testRunner.And("a snack price \"-20\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a snack price -20", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 38
 testRunner.And("a \"post\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -309,7 +309,7 @@ testRunner.And("a \"post\" request of snacks", ((string)(null)), ((TechTalk.Spec
 testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 40
-testRunner.Then("the result should be the code \"400\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the result should be the code 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -350,7 +350,7 @@ testRunner.Given("a snack name \"\"", ((string)(null)), ((TechTalk.SpecFlow.Tabl
 testRunner.And("a snack description \"Papas Lays\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 45
-testRunner.And("a snack price \"20\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a snack price 20", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 46
 testRunner.And("a \"post\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -359,7 +359,7 @@ testRunner.And("a \"post\" request of snacks", ((string)(null)), ((TechTalk.Spec
 testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 48
-testRunner.Then("the result should be the code \"400\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the result should be the code 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -394,7 +394,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 51
-testRunner.Given("a snack with id \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("a snack with id 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 52
 testRunner.And("a snack name \"Papas\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -403,7 +403,7 @@ testRunner.And("a snack name \"Papas\"", ((string)(null)), ((TechTalk.SpecFlow.T
 testRunner.And("a snack description \"Papas Lays\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 54
-testRunner.And("a snack price \"20\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a snack price 20", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 55
 testRunner.And("a \"put\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -412,7 +412,7 @@ testRunner.And("a \"put\" request of snacks", ((string)(null)), ((TechTalk.SpecF
 testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 57
-testRunner.Then("the result should be the code \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the result should be the code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -447,7 +447,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 60
-testRunner.Given("a snack with id \"12\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("a snack with id 12", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 61
 testRunner.And("a snack name \"Papas\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -456,7 +456,7 @@ testRunner.And("a snack name \"Papas\"", ((string)(null)), ((TechTalk.SpecFlow.T
 testRunner.And("a snack description \"Papas Lays\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 63
-testRunner.And("a snack price \"20\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a snack price 20", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 64
 testRunner.And("a \"put\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -465,7 +465,7 @@ testRunner.And("a \"put\" request of snacks", ((string)(null)), ((TechTalk.SpecF
 testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 66
-testRunner.Then("the result should be the code \"404\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the result should be the code 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -500,7 +500,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 69
-testRunner.Given("a snack with id \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("a snack with id 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 70
 testRunner.And("a snack name \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -509,7 +509,7 @@ testRunner.And("a snack name \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)
 testRunner.And("a snack description \"Papas Lays\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 72
-testRunner.And("a snack price \"20\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a snack price 20", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 73
 testRunner.And("a \"put\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -518,7 +518,7 @@ testRunner.And("a \"put\" request of snacks", ((string)(null)), ((TechTalk.SpecF
 testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 75
-testRunner.Then("the result should be the code \"404\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the result should be the code 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -553,7 +553,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 78
-testRunner.Given("a snack with id \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("a snack with id 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 79
 testRunner.And("a snack name \"Papas\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -562,7 +562,7 @@ testRunner.And("a snack name \"Papas\"", ((string)(null)), ((TechTalk.SpecFlow.T
 testRunner.And("a snack description \"Papas Lays\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 81
-testRunner.And("a snack price \"-20\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a snack price -20", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 82
 testRunner.And("a \"put\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -571,7 +571,7 @@ testRunner.And("a \"put\" request of snacks", ((string)(null)), ((TechTalk.SpecF
 testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 84
-testRunner.Then("the result should be the code \"404\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the result should be the code 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -606,7 +606,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 87
-testRunner.Given("a snack with id \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("a snack with id 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 88
 testRunner.And("a \"delete\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -615,7 +615,7 @@ testRunner.And("a \"delete\" request of snacks", ((string)(null)), ((TechTalk.Sp
 testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 90
-testRunner.Then("the result should be the code \"200\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the result should be the code 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -650,7 +650,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 93
-testRunner.Given("a snack with id \"13\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("a snack with id 13", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 94
 testRunner.And("a \"delete\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -659,7 +659,7 @@ testRunner.And("a \"delete\" request of snacks", ((string)(null)), ((TechTalk.Sp
 testRunner.When("the request of \"snacks\" is sent", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 96
-testRunner.Then("the result should be the code \"404\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the result should be the code 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
