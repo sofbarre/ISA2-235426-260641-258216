@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace ArenaGestor.Business
 {
-    public class SnackService 
+    public class SnackService : ISnackService
     {
-        private readonly SnackManagement snackManagement;
+        private readonly ISnackManagement snackManagement;
 
-        public SnackService(SnackManagement snackManagement)
+        public SnackService(ISnackManagement snackManagement)
         {
             this.snackManagement = snackManagement;
         }   

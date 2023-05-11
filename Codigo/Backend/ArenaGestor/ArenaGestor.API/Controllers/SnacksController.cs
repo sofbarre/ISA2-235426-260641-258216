@@ -20,20 +20,20 @@ namespace ArenaGestor.API.Controllers
     public class SnacksController : ControllerBase, ISnackAppService
     { 
         private readonly IMapper mapper;
-        private readonly SnackService snackService;
-        public SnacksController(IMapper mapper, SnackService snackService)
+        private readonly ISnackService snackService;
+        public SnacksController(IMapper mapper, ISnackService snackService)
         {
             this.mapper = mapper;
             this.snackService = snackService;   
         }
-        [AuthorizationFilter(RoleCode.Administrador)]
+        //[AuthorizationFilter(RoleCode.Administrador)]
         [HttpGet]
         public IActionResult GetSnacks()
         {
             var result = snackService.GetSnacks();
             return Ok(result);
         }
-        [AuthorizationFilter(RoleCode.Administrador)]
+        //[AuthorizationFilter(RoleCode.Administrador)]
         [HttpPost]
         public IActionResult PostSnack([FromBody] SnackPostDto snack)
         {
@@ -53,7 +53,7 @@ namespace ArenaGestor.API.Controllers
                 return NotFound(ex.Message);
             }
         }
-        [AuthorizationFilter(RoleCode.Administrador)]
+        //[AuthorizationFilter(RoleCode.Administrador)]
         [HttpPut("{snackId}")]
         public IActionResult PutSnack([FromRoute]int snackId,[FromBody] SnackPutDto snack)
         {
@@ -73,7 +73,7 @@ namespace ArenaGestor.API.Controllers
                 return NotFound(ex.Message);
             }
         }
-        [AuthorizationFilter(RoleCode.Administrador)]
+        //[AuthorizationFilter(RoleCode.Administrador)]
         [HttpGet("{snackId}")]
         public IActionResult GetSnackById([FromRoute] int snackId)
         {
@@ -86,7 +86,7 @@ namespace ArenaGestor.API.Controllers
                 return NotFound(ex.Message);
             }
         }
-        [AuthorizationFilter(RoleCode.Administrador)]
+        //[AuthorizationFilter(RoleCode.Administrador)]
         [HttpDelete("{snackId}")]
         public IActionResult DeleteSnack([FromRoute]int snackId)
         {

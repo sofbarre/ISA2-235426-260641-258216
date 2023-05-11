@@ -10,41 +10,44 @@ using System.Threading.Tasks;
 
 namespace ArenaGestor.DataAccess.Managements
 {
-    public class SnackManagement 
+    public class SnackManagement : ISnackManagement
     {
-        private readonly ArenaGestorContext context;
+        private readonly DbContext context;
+        private readonly DbSet<Snack> snacks;
 
-        public SnackManagement(ArenaGestorContext context)
+        public SnackManagement(DbContext context)
         {
             this.context = context;
+            this.snacks = context.Set<Snack>();
+
         }
         public void InsertSnack(Snack snack)
         {
-            context.Snacks.Add(snack);
+            snacks.Add(snack);
             context.SaveChanges();
 
         }
         public IEnumerable<Snack> GetSnacks()
         {
-            return context.Snacks.ToList().OrderBy(x => x.SnackId);
+            return snacks.ToList().OrderBy(x => x.SnackId);
         }
         public Snack GetSnackById(int id)
         {
-            return context.Snacks.FirstOrDefault(snack => snack.SnackId == id);
+            return snacks.FirstOrDefault(snack => snack.SnackId == id);
         }
         public void UpdateSnack(Snack snackUpdated)
         {
-            Snack snackDB = context.Snacks.FirstOrDefault(snack => snack.SnackId == snackUpdated.SnackId);
+            Snack snackDB = snacks.FirstOrDefault(snack => snack.SnackId == snackUpdated.SnackId);
             snackDB.Name = snackUpdated.Name;
             snackDB.Description = snackUpdated.Description;
             snackDB.Price = snackUpdated.Price;
-            context.Snacks.Update(snackDB);
+            snacks.Update(snackDB);
             context.SaveChanges();
         }
         public void DeleteSnack(int snackId)
         {
-            Snack snackDB = context.Snacks.FirstOrDefault(snack => snack.SnackId == snackId);
-            context.Snacks.Remove(snackDB);
+            Snack snackDB = snacks.FirstOrDefault(snack => snack.SnackId == snackId);
+            snacks.Remove(snackDB);
             context.SaveChanges();
         }
     }
