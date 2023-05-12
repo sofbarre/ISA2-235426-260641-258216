@@ -28,6 +28,7 @@ namespace ArenaGestor.BusinessFactory
             services.AddScoped<ISecurityService, SecurityService>();
             services.AddScoped<ITicketService, TicketService>();
             services.AddScoped<IRolesService, RolesService>();
+            services.AddScoped<ISnackService, SnackService>();
             services.AddScoped<IImportExportService, ImportExportService>();
             services.AddSingleton<IReflectionHelpers, ReflectionHelpers>();
         }

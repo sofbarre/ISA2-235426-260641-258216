@@ -1,7 +1,11 @@
 using ArenaGestor.API;
 using ArenaGestor.API.Filters;
+using ArenaGestor.Business;
 using ArenaGestor.BusinessFactory;
+using ArenaGestor.BusinessInterface;
+using ArenaGestor.DataAccess.Managements;
 using ArenaGestor.DataAccessFactory;
+using ArenaGestor.DataAccessInterface;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -46,6 +50,7 @@ namespace ArenaGestor
 
             ServiceFactory serviceFactory = new ServiceFactory(services);
             ManagementFactory managementFactory = new ManagementFactory(services);
+
             managementFactory.AddDbContextService(this.Configuration.GetConnectionString(@"ArenaGestorContext"));
 
             // Auto Mapper Configurations

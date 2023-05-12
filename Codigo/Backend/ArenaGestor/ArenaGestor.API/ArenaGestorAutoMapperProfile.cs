@@ -5,6 +5,7 @@ using ArenaGestor.APIContracts.Country;
 using ArenaGestor.APIContracts.Gender;
 using ArenaGestor.APIContracts.Roles;
 using ArenaGestor.APIContracts.Security;
+using ArenaGestor.APIContracts.Snack;
 using ArenaGestor.APIContracts.Soloist;
 using ArenaGestor.APIContracts.Ticket;
 using ArenaGestor.APIContracts.Users;
@@ -143,6 +144,11 @@ namespace ArenaGestor.API
             CreateMap<Country, CountryResultDto>();
             CreateMap<ConcertUpdateCountryDto, Country>();
             CreateMap<ConcertUpdateLocationDto, Location>();
+
+            CreateMap<SnackPostDto, Snack>();
+            CreateMap<Snack, SnackGetDto>();
+            CreateMap<SnackPutDto, Snack>();
+
         }
     }
 }
