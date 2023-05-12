@@ -377,6 +377,23 @@ namespace ArenaGestor.DataAccess.Migrations
                     b.ToTable("Ticket");
                 });
 
+            modelBuilder.Entity("ArenaGestor.Domain.TicketSnack", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("idSnack")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("idTicket")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TicketSnack");
+                });
+
             modelBuilder.Entity("ArenaGestor.Domain.TicketStatus", b =>
                 {
                     b.Property<int>("TicketStatusId")

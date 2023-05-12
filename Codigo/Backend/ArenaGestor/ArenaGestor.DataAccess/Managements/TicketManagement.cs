@@ -10,11 +10,13 @@ namespace ArenaGestor.DataAccess.Managements
     public class TicketManagement : ITicketManagement
     {
         private readonly DbSet<Ticket> tickets;
+        private readonly DbSet<TicketSnack> ticketSnacks;
         private readonly DbContext context;
 
         public TicketManagement(DbContext context)
         {
             this.tickets = context.Set<Ticket>();
+            this.ticketSnacks = context.Set<TicketSnack>();
             this.context = context;
         }
 
@@ -42,6 +44,12 @@ namespace ArenaGestor.DataAccess.Managements
         {
             tickets.Add(ticket);
         }
+
+        public void InsertTicketSnack(TicketSnack aTicketSnack)
+        {
+            ticketSnacks.Add(aTicketSnack);
+        }
+
 
         public void UpdateTicket(Ticket ticket)
         {

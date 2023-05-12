@@ -14,5 +14,6 @@ namespace ArenaGestor.DataAccessInterface
         void UpdateTicket(Ticket ticket);
         void Save();
         IEnumerable<Ticket> GetTicketsByUser(string email);
+        void InsertTicketSnack(TicketSnack aTicketSnack);
     }
 }

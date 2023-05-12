@@ -6,8 +6,8 @@ import { SnackResultDto } from 'src/app/models/Tickets/SnackResultDto';
 import { TicketBuyTicketDto } from 'src/app/models/Tickets/TicketBuyTicketDto';
 import { snackGetAllDataDto } from 'src/app/models/Tickets/snackGetAllDataDto';
 import { ConcertService } from 'src/app/services/concert.service';
-import { snacksService } from 'src/app/services/snacks.service';
 import { TicketsService } from 'src/app/services/tickets.service';
+import {SnackService} from 'src/app/services/snack.service';
 
 @Component({
   selector: 'app-buy',
@@ -18,11 +18,12 @@ export class BuyComponent implements OnInit {
   selectedTourName: String = "";
   selectedId: Number = 0;
   amount : Number = 0;
-  selectedSnacks: Array<SnackBuyTicketDto> = new Array<SnackBuyTicketDto>()
+  selectedSnacks: Array<Number> = new Array<Number>()
+  selectedSnacksNames: Array<String> = [];
   snackList: Array<snackGetAllDataDto> = new Array<snackGetAllDataDto>()
 
 
-  constructor(private toastr: ToastrService, private ticketService: TicketsService, private service: ConcertService, private router: Router, private activatedRoute: ActivatedRoute , private snacksService: snacksService) { }
+  constructor(private toastr: ToastrService, private ticketService: TicketsService, private service: ConcertService, private router: Router, private activatedRoute: ActivatedRoute , private snacksService: SnackService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -31,24 +32,21 @@ export class BuyComponent implements OnInit {
         this.selectedId = concert.concertId
       })
     })
+    this.GetData();
   }
 
   Confirmar() {
     let dto = new TicketBuyTicketDto()
     dto.Amount = this.amount
     dto.concertId = this.selectedId
+    dto.snackIds = this.selectedSnacks
+    var snacksComprados = ", snacks comprados "
+    this.selectedSnacksNames.forEach(element => {
+      snacksComprados+= element + ", "
+    });
     this.ticketService.Shopping(dto).subscribe(res => {
-      this.toastr.success("Ticket comprado con ID: " + res.ticketId)
-    }, error => {
-      this.toastr.error(error.error)
-    })
-  }
-
-
-  ConfirmarCompraSnacks() {
-    let dto = this.selectedSnacks;
-    this.snacksService.Shopping(dto).subscribe(res => {
-      this.toastr.success("Snacks comprados")
+      let respuesta = this.selectedSnacksNames.length> 0 ? "Ticket comprado con ID: " + res.ticketId + snacksComprados : "Ticket comprado con ID: " + res.ticketId;
+      this.toastr.success(respuesta)
     }, error => {
       this.toastr.error(error.error)
     })
@@ -60,9 +58,9 @@ export class BuyComponent implements OnInit {
     })
   }
 
-  AddSnackToList(id: Number) {
-    var snack = new SnackBuyTicketDto();
-    snack.snackId =id;
-    this.selectedSnacks.push(snack);
+  AddSnackToList(id: Number , name: String ) {
+    this.selectedSnacks.push(id);
+    this.selectedSnacksNames.push(name);
+    this.toastr.success("se agrego el snack " + name + " correctamente")
   }
 }

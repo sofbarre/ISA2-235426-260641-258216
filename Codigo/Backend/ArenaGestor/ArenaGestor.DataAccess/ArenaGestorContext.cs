@@ -21,6 +21,8 @@ namespace ArenaGestor.DataAccess
         public DbSet<ArtistBand> ArtistBands { get; set; }
         public DbSet<ConcertProtagonist> ConcertProtagonists { get; set; }
         public DbSet<Country> Countrys { get; set; }
+        public DbSet<TicketSnack> TicketSnack { get; set; }
+
 
         public ArenaGestorContext(DbContextOptions options) : base(options)
         {

@@ -34,7 +34,6 @@ namespace ArenaGestor.API.Controllers
             return Ok(resultDto);
         }
 
-        [AuthorizationFilter(RoleCode.Espectador)]
         [HttpPost("Shopping")]
         public IActionResult PostTickets([FromBody] TicketBuyTicketDto buyTicket)
         {

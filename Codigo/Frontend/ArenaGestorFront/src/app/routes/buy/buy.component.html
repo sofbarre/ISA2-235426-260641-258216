@@ -17,7 +17,6 @@
                         <label class="form-label">Cantidad de boletos</label>
                         <input type="number" class="form-control" name="ammount" [(ngModel)]="amount">
                     </div>
-                    <button class="btn btn-primary btn-small" (click)="Confirmar()">Confirmar</button>
                 </div>
             </div>
         </div>
@@ -33,12 +32,15 @@
         <tbody>
             <tr *ngFor="let snack of snackList">
                 <td>
-                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                        data-bs-target="#deleteSnack" (click)="AddSnackToList(snack.snackId)">Agregar</button>                   
+                    <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#deleteSnack" (click)="AddSnackToList(snack.snackId , snack.name)">Agregar</button>                   
                 </td>
                 <td scope="col">{{snack.name}}</td>
                 <td scope="col">{{snack.price}}</td>
             </tr>
         </tbody>
     </table>
+</div>
+<div style="display: flex; justify-content: center;">
+    <button class="btn btn-primary" style="padding: 20px 40px; font-size: 20px;" (click)="Confirmar()">Confirmar</button>
 </div>

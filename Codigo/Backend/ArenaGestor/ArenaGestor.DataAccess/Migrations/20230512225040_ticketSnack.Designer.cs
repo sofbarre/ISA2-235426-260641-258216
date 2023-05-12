@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ArenaGestor.DataAccess.Migrations
 {
     [DbContext(typeof(ArenaGestorContext))]
-    [Migration("20220609010648_county")]
-    partial class county
+    [Migration("20230512225040_ticketSnack")]
+    partial class ticketSnack
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,10 +33,15 @@ namespace ArenaGestor.DataAccess.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("ArtistId");
 
                     b.HasIndex("Name")
                         .IsUnique();
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Artist");
                 });
@@ -49,7 +54,7 @@ namespace ArenaGestor.DataAccess.Migrations
                     b.Property<int>("MusicalProtagonistId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("RoleArtistId")
+                    b.Property<int>("RoleArtistId")
                         .HasColumnType("int");
 
                     b.HasKey("ArtistId", "MusicalProtagonistId");
@@ -71,7 +76,7 @@ namespace ArenaGestor.DataAccess.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("LocationId")
+                    b.Property<int>("LocationId")
                         .HasColumnType("int");
 
                     b.Property<double>("Price")
@@ -163,7 +168,7 @@ namespace ArenaGestor.DataAccess.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CountryId")
+                    b.Property<int>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<int>("Number")
@@ -251,6 +256,11 @@ namespace ArenaGestor.DataAccess.Migrations
                         {
                             RoleId = 4,
                             Name = "Espectador"
+                        },
+                        new
+                        {
+                            RoleId = 5,
+                            Name = "Artista"
                         });
                 });
 
@@ -319,6 +329,28 @@ namespace ArenaGestor.DataAccess.Migrations
                     b.ToTable("Session");
                 });
 
+            modelBuilder.Entity("ArenaGestor.Domain.Snack", b =>
+                {
+                    b.Property<int>("SnackId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.HasKey("SnackId");
+
+                    b.ToTable("Snack");
+                });
+
             modelBuilder.Entity("ArenaGestor.Domain.Ticket", b =>
                 {
                     b.Property<Guid>("TicketId")
@@ -345,6 +377,23 @@ namespace ArenaGestor.DataAccess.Migrations
                     b.HasIndex("TicketStatusId");
 
                     b.ToTable("Ticket");
+                });
+
+            modelBuilder.Entity("ArenaGestor.Domain.TicketSnack", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("idSnack")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("idTicket")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TicketSnack");
                 });
 
             modelBuilder.Entity("ArenaGestor.Domain.TicketStatus", b =>
@@ -441,7 +490,7 @@ namespace ArenaGestor.DataAccess.Migrations
                     b.Property<int>("ArtistId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("RoleArtistId")
+                    b.Property<int>("RoleArtistId")
                         .HasColumnType("int");
 
                     b.HasIndex("ArtistId");
@@ -449,6 +498,15 @@ namespace ArenaGestor.DataAccess.Migrations
                     b.HasIndex("RoleArtistId");
 
                     b.ToTable("Soloist");
+                });
+
+            modelBuilder.Entity("ArenaGestor.Domain.Artist", b =>
+                {
+                    b.HasOne("ArenaGestor.Domain.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ArenaGestor.Domain.ArtistBand", b =>
@@ -467,7 +525,9 @@ namespace ArenaGestor.DataAccess.Migrations
 
                     b.HasOne("ArenaGestor.Domain.RoleArtist", "RoleArtist")
                         .WithMany()
-                        .HasForeignKey("RoleArtistId");
+                        .HasForeignKey("RoleArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Artist");
 
@@ -480,7 +540,9 @@ namespace ArenaGestor.DataAccess.Migrations
                 {
                     b.HasOne("ArenaGestor.Domain.Location", "Location")
                         .WithMany()
-                        .HasForeignKey("LocationId");
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Location");
                 });
@@ -508,7 +570,9 @@ namespace ArenaGestor.DataAccess.Migrations
                 {
                     b.HasOne("ArenaGestor.Domain.Country", "Country")
                         .WithMany()
-                        .HasForeignKey("CountryId");
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Country");
                 });
@@ -598,7 +662,9 @@ namespace ArenaGestor.DataAccess.Migrations
 
                     b.HasOne("ArenaGestor.Domain.RoleArtist", "RoleArtist")
                         .WithMany()
-                        .HasForeignKey("RoleArtistId");
+                        .HasForeignKey("RoleArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Artist");
 
