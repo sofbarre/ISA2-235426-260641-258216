@@ -37,7 +37,7 @@ namespace ArenaGestor.SpecFlow.StepDefinitions
                     httpMethod = HttpMethod.Post; 
                     break;
                 case "put":
-                    httpMethod = HttpMethod.Get;
+                    httpMethod = HttpMethod.Put;
                     break;
                 case "delete":
                     httpMethod = HttpMethod.Delete; 

@@ -67,7 +67,7 @@ Then the result should be the code 404
 
 Scenario: modificacion de snack nombre invalido
 Given a snack with id 2
-And a snack name ""
+And a snack name "  "
 And a snack description "Papas Lays"
 And a snack price 20
 And a "put" request of snacks
@@ -84,7 +84,7 @@ When the request of "snacks" is sent
 Then the result should be the code 404
 
 Scenario: borrar snack especifico
-Given a snack with id 1
+Given a snack with id 3
 And a "delete" request of snacks
 When the request of "snacks" is sent 
 Then the result should be the code 200

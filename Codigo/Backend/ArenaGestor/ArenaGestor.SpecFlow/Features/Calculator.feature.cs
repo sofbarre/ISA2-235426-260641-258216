@@ -503,7 +503,7 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("a snack with id 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 70
-testRunner.And("a snack name \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("a snack name \"  \"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 71
 testRunner.And("a snack description \"Papas Lays\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -606,7 +606,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 87
-testRunner.Given("a snack with id 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given("a snack with id 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 88
 testRunner.And("a \"delete\" request of snacks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

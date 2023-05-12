@@ -49,15 +49,19 @@ namespace ArenaGestor.Business
         {
             return this.snackManagement.GetSnacks();
         }
-        public void UpdateSnack(Snack sanckUpdated)
+        public void UpdateSnack(Snack snackUpdated)
         {
-            if (sanckUpdated.Name.Trim().Equals("") || sanckUpdated.Price < 0)
+            if (snackUpdated.Name.Trim().Length == 0 || snackUpdated.Price < 0)
             {
                 throw new Exception("Precio o nombre de snack no validos");
             }
+            else if (GetSnackById(snackUpdated.SnackId)is null)
+            {
+                throw new Exception("Snack inexistente");
+            }
             else
             {
-                this.snackManagement.UpdateSnack(sanckUpdated);
+                this.snackManagement.UpdateSnack(snackUpdated);
             }
         }
         public void DeleteSnack(int snackId)
