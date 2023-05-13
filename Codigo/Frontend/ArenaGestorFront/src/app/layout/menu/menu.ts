@@ -56,6 +56,11 @@ const Admin = {
             link: 'administracion/usuarios',
             roles: ["Administrador"]
         },
+        {
+            text: 'Snacks',
+            link: 'administracion/snacks',
+            roles: ["Administrador"]
+        },
     ]
 };
 

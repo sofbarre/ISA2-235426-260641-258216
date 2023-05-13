@@ -14,6 +14,7 @@
     <ProjectReference Include="..\ArenaGestor.BusinessHelpers\ArenaGestor.BusinessHelpers.csproj" />
     <ProjectReference Include="..\ArenaGestor.BusinessInterface\ArenaGestor.BusinessInterface.csproj" />
     <ProjectReference Include="..\ArenaGestor.DataAccessInterface\ArenaGestor.DataAccessInterface.csproj" />
+    <ProjectReference Include="..\ArenaGestor.DataAccess\ArenaGestor.DataAccess.csproj" />
     <ProjectReference Include="..\ArenaGestor.Extensions\ArenaGestor.Extensions.csproj" />
   </ItemGroup>
 

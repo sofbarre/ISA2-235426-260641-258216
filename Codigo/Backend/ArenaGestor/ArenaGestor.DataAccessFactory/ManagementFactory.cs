@@ -2,6 +2,7 @@
 using ArenaGestor.DataAccess.Managements;
 using ArenaGestor.DataAccessInterface;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ArenaGestor.DataAccessFactory
@@ -30,11 +31,13 @@ namespace ArenaGestor.DataAccessFactory
             services.AddScoped<ITicketStatusManagement, TicketStatusManagement>();
             services.AddScoped<ICountrysManagement, CountrysManagement>();
             services.AddScoped<IRolesManagement, RolesManagement>();
+            services.AddScoped<ISnackManagement, SnackManagement>();
         }
 
         public void AddDbContextService(string connectionString)
         {
             services.AddDbContext<DbContext, ArenaGestorContext>(options => options.UseSqlServer(connectionString), optionsLifetime: ServiceLifetime.Scoped);
         }
+
     }
 }

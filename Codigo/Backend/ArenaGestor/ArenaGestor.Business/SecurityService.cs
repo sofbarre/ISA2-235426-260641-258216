@@ -4,7 +4,7 @@ using ArenaGestor.DataAccessInterface;
 using ArenaGestor.Domain;
 using System;
 using System.Linq;
-
+using ArenaGestor.Extensions;
 namespace ArenaGestor.Business
 {
     public class SecurityService : ISecurityService
