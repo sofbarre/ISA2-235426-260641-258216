@@ -14,9 +14,12 @@ export class SnackUpdateComponent implements OnInit {
   mode: String = "Editar";
   model: SnackUpdateDto = new SnackUpdateDto();
 
-  constructor(private service: SnackService, private toastr: ToastrService, private router: Router, private id: Number ) { }
+  constructor(private service: SnackService, private toastr: ToastrService, private router: Router, private id: Number ) {
+    console.log("eee");
+   }
 
   ngOnInit(): void {
+    console.log("eee"+ this.id);
       this.service.GetById(this.id).subscribe(snack => {
         this.model.snackId = snack.snackId
         this.model.name = snack.name

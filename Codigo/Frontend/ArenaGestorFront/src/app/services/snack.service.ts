@@ -26,6 +26,7 @@ import { SnackResultDto } from '../models/Snacks/SnackResultDto';
     }
 
     GetById(id: Number): Observable<SnackResultDto> {
+      console.log("eeeee" +id);
         return this.http.get<SnackResultDto>(this.apiUrl + "/" + id.toString())
       }
     
@@ -33,8 +34,8 @@ import { SnackResultDto } from '../models/Snacks/SnackResultDto';
         return this.http.post<SnackResultDto>(this.apiUrl, artist)
       }
     
-      Update(artist: SnackUpdateDto): Observable<SnackResultDto> {
-        return this.http.put<SnackResultDto>(this.apiUrl, artist)
+      Update(snack: SnackUpdateDto): Observable<SnackResultDto> {
+        return this.http.put<SnackResultDto>(this.apiUrl+"/"+snack.snackId, snack)
       }
     
       Delete(id: Number) {

@@ -13,6 +13,9 @@ export class SnackComponent implements OnInit {
     snackList: Array<SnackResultDto> = new Array<SnackResultDto>()
     filter: String = "";
     snackToDelete: Number = 0;
+    snackToEdit:Number = 0;
+    snack:SnackResultDto = new SnackResultDto()
+
   
     constructor(private toastr: ToastrService, private service: SnackService, private router: Router) { }
   
@@ -30,7 +33,20 @@ export class SnackComponent implements OnInit {
     SetSnackToDelete(id: Number) {
       this.snackToDelete = id;
     }
+    SetSnackToEdit(snack:SnackResultDto){
+      this.snackToEdit = snack.snackId;
+      this.snack=snack;
+    }
   
+    Confirmar() {
+      this.service.Update(this.snack).subscribe(res => {
+        this.toastr.success("Snack actualizado correctamente", "Éxito")
+        this.router.navigate(["/administracion/snacks"])
+      },
+        err => {
+          this.toastr.error(err.error, "Error")
+        })
+    }
     Delete() {
       this.service.Delete(this.snackToDelete).subscribe(res => {
         this.toastr.success("Artista eliminado correctamente", "Éxito")
