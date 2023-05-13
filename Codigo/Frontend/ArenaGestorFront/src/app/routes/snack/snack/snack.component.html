@@ -22,8 +22,8 @@
             <td>
                 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
                     data-bs-target="#deleteSnack" (click)="SetSnackToDelete(snack.snackId)">Borrar</button>
-                <a type="button" class="btn btn-warning btn-sm ms-1"
-                    routerLink="/administracion/snacks/editar/{{snack.snackId}}" role="button">Editar</a>
+                <a type="button" class="btn btn-warning btn-sm ms-1" data-bs-toggle="modal"
+                data-bs-target="#EditSnack" (click)="SetSnackToEdit(snack)" role="button">Editar</a>
             </td>
             <td scope="col">{{snack.snackId}}</td>
             <td scope="col">{{snack.name}}</td>
@@ -46,6 +46,34 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-danger" (click)="Delete();" data-bs-dismiss="modal">Borrar</button>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="EditSnack" tabindex="-1" aria-labelledby="EditSnackLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="EditSnackLabel">Editar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="name" [(ngModel)]="snack.name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Descripción</label>
+                    <textarea type="text" class="form-control" name="description" [(ngModel)]="snack.description"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Precio </label>
+                    <input type="number" class="form-control" name="price" [(ngModel)]="snack.price">
+                </div>
+                <button class="btn btn-primary btn-small" (click)="Confirmar()">Confirmar</button>
+                <a routerLink='/administracion/artistas' class="btn btn-danger btn-small ms-1" role="button">Volver</a>
+            </div>
+
         </div>
     </div>
 </div>

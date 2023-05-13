@@ -22,7 +22,7 @@ export class SnackFormComponent implements OnInit {
 
   Confirmar() {
     this.service.Insert(this.model).subscribe(res => {
-      this.toastr.success("Artista agregado correctamente", "Éxito")
+      this.toastr.success("Snack agregado correctamente", "Éxito")
       this.router.navigate(["/administracion/snacks"])
     },
       err => {
