@@ -39,6 +39,15 @@ jobs:
     - name: Test DataAccessTest
       working-directory: ./Codigo/Backend/ArenaGestor/Test/ArenaGestor.DataAccessTest/
       run: dotnet test --no-build --verbosity normal
+    
+    - name: Test DataAccessTest
+      working-directory: ./Codigo/Backend/ArenaGestor/ArenaGestor.SpecFlow/
+      run: dotnet test --no-build --verbosity normal
+
+    - name: Test DataAccessTest
+      working-directory: ./Codigo/Backend/ArenaGestor/ArenaGestor.ComprarSnacks/
+      run: dotnet test --no-build --verbosity normal
+
 
   frontend:
     name: build frontend
