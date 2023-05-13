@@ -34,3 +34,15 @@ C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\
 C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\refint\ArenaGestor.APIContracts.dll
 C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\ArenaGestor.APIContracts.pdb
 C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\ref\ArenaGestor.APIContracts.dll
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\bin\Debug\net5.0\ArenaGestor.APIContracts.deps.json
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\bin\Debug\net5.0\ArenaGestor.APIContracts.dll
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\bin\Debug\net5.0\ArenaGestor.APIContracts.pdb
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\ArenaGestor.APIContracts.csproj.AssemblyReference.cache
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\ArenaGestor.APIContracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\ArenaGestor.APIContracts.AssemblyInfoInputs.cache
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\ArenaGestor.APIContracts.AssemblyInfo.cs
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\ArenaGestor.APIContracts.csproj.CoreCompileInputs.cache
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\ArenaGestor.APIContracts.dll
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\refint\ArenaGestor.APIContracts.dll
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\ArenaGestor.APIContracts.pdb
+C:\Facultad\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.APIContracts\obj\Debug\net5.0\ref\ArenaGestor.APIContracts.dll

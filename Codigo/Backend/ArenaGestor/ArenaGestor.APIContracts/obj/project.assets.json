@@ -4056,24 +4056,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sbarreto\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\bruno\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.APIContracts\\ArenaGestor.APIContracts.csproj",
+      "projectUniqueName": "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.APIContracts\\ArenaGestor.APIContracts.csproj",
       "projectName": "ArenaGestor.APIContracts",
-      "projectPath": "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.APIContracts\\ArenaGestor.APIContracts.csproj",
-      "packagesPath": "C:\\Users\\sbarreto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.APIContracts\\obj\\",
+      "projectPath": "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.APIContracts\\ArenaGestor.APIContracts.csproj",
+      "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
+      "outputPath": "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.APIContracts\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\sbarreto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
