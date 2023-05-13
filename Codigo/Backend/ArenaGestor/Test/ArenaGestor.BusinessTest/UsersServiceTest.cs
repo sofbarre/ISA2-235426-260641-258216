@@ -339,6 +339,15 @@ namespace ArenaGestor.BusinessTest
             managementMock.VerifyAll();
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void UpdateUserHeaderEmptyRoleFailTest()
+        {
+            securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userEmptyRol);
+            managementService.UpdateUser(It.IsAny<string>(), userEmptyRol);
+            managementMock.VerifyAll();
+        }
+
         [ExpectedException(typeof(ArgumentException))]
         [TestMethod]
         public void InsertNullTest()

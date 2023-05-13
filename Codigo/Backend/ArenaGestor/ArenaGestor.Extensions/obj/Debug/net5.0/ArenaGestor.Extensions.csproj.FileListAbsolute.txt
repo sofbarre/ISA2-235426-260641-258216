@@ -1,0 +1,36 @@
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\bin\Debug\net5.0\ArenaGestor.Extensions.deps.json
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\bin\Debug\net5.0\ArenaGestor.Extensions.dll
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\bin\Debug\net5.0\ArenaGestor.Extensions.pdb
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.csproj.AssemblyReference.cache
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.AssemblyInfoInputs.cache
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.AssemblyInfo.cs
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.csproj.CoreCompileInputs.cache
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.dll
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\refint\ArenaGestor.Extensions.dll
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.pdb
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\Material Obligatorio 2023 S1\Obligatorio\codigo\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ref\ArenaGestor.Extensions.dll
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\bin\Debug\net5.0\ArenaGestor.Extensions.deps.json
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\bin\Debug\net5.0\ArenaGestor.Extensions.dll
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\bin\Debug\net5.0\ArenaGestor.Extensions.pdb
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.csproj.AssemblyReference.cache
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.AssemblyInfoInputs.cache
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.AssemblyInfo.cs
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.csproj.CoreCompileInputs.cache
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.dll
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\refint\ArenaGestor.Extensions.dll
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.pdb
+C:\Users\bruno\OneDrive\Escritorio\semestre7\ISA2\1erObligatorio\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ref\ArenaGestor.Extensions.dll
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\bin\Debug\net5.0\ArenaGestor.Extensions.deps.json
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\bin\Debug\net5.0\ArenaGestor.Extensions.dll
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\bin\Debug\net5.0\ArenaGestor.Extensions.pdb
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.csproj.AssemblyReference.cache
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.AssemblyInfoInputs.cache
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.AssemblyInfo.cs
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.csproj.CoreCompileInputs.cache
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.dll
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\refint\ArenaGestor.Extensions.dll
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ArenaGestor.Extensions.pdb
+C:\Users\sbarreto\Documents\Clase\isa2\ISA2-235426-260641-258216\Codigo\Backend\ArenaGestor\ArenaGestor.Extensions\obj\Debug\net5.0\ref\ArenaGestor.Extensions.dll

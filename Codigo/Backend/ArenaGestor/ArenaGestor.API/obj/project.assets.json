@@ -2409,6 +2409,7 @@
         "dependencies": {
           "ArenaGestor.BusinessHelpers": "1.0.0",
           "ArenaGestor.BusinessInterface": "1.0.0",
+          "ArenaGestor.DataAccess": "1.0.0",
           "ArenaGestor.DataAccessInterface": "1.0.0",
           "ArenaGestor.Extensions": "1.0.0",
           "AutoMapper": "11.0.1",
@@ -7618,5 +7619,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.API\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

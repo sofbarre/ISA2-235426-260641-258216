@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "B9SO6r94V0GknRZtLvdiEQPQ9sQZyALOAAkZOquRJy+D9aoBjmKxVynKkiiJ/ZEzni7uQXXsg5K53NLLeU+Abg==",
+  "dgSpecHash": "1kUsh166sMnG5+kkcxfLVzN+9mntYMIDGesS4cpCk5jA2WYruZ8acJSRvmKJtS6J5ClCyuQ/W9PhpSBvbJk8iw==",
   "success": true,
   "projectFilePath": "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\Test\\ArenaGestor.APITest\\ArenaGestor.APITest.csproj",
   "expectedPackageFiles": [
@@ -179,5 +179,12 @@
     "C:\\Users\\sbarreto\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\sbarreto\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\Test\\ArenaGestor.APITest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

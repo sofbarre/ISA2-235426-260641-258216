@@ -129,5 +129,20 @@ namespace ArenaGestor.DataAccessTest
         {
             this.context.Database.EnsureDeleted();
         }
+        [TestMethod]
+        public void DeleteTestArtista()
+        {
+            sessionOK.User.Roles.Clear();
+            sessionOK.User.Roles.Add(new UserRole()
+            {
+                RoleId = RoleCode.Artista
+            });
+            management.DeleteSession(sessionOK);
+            management.Save();
+            Func<Session, bool> filter = new Func<Session, bool>(x => true);
+            int size = management.GetSessions(filter).ToList().Count;
+            Assert.AreEqual(0, size);
+        }
+
     }
 }

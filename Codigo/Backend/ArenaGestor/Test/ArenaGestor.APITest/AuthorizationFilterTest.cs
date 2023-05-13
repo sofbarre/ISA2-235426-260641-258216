@@ -116,6 +116,24 @@ namespace ArenaGestor.APITest
 
             Assert.AreEqual(StatusCodes.Status403Forbidden, (AuthFilterContext.Result as ContentResult).StatusCode);
         }
+        [TestMethod]
+        public void OnLogOutOk()
+        {
+            userOk.Roles.Clear();
+            userOk.Roles.Add(new UserRole()
+            {
+                RoleId = RoleCode.Artista
+            });
+            httpContextMock.Setup(x => x.Request.Headers["token"]).Returns("123456");
+            httpContextMock.Setup(x => x.RequestServices.GetService(typeof(ISecurityService))).Returns(securityServiceMock.Object);
+            securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
+            securityServiceMock.Setup(x => x.UserHaveRole(It.IsAny<RoleCode>(), It.IsAny<string>())).Returns(true);
+            var AuthFilterContext = GetFilterContext(httpContextMock.Object);
+            filter.OnAuthorization(AuthFilterContext);
+
+            securityServiceMock.VerifyAll();
+            httpContextMock.VerifyAll();
+        }
 
     }
 }

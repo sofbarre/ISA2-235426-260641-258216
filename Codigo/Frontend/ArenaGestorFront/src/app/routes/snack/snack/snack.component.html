@@ -1,0 +1,79 @@
+<div class="d-flex flex-row justify-content-between">
+    <div class="d-flex">
+        <h2>Snack</h2>
+        <a class="btn btn-primary btn-sm ms-3" role="button" routerLink="/administracion/snacks/insertar">Nuevo</a>
+    </div>
+    <div class="align-self-center">
+        <input type="text" class="form-control" placeholder="Filter" name="filter" [(ngModel)]="filter"
+            #modelFilter="ngModel" (keyup)="GetData()">
+    </div>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let snack of snackList">
+            <td>
+                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#deleteSnack" (click)="SetSnackToDelete(snack.snackId)">Borrar</button>
+                <a type="button" class="btn btn-warning btn-sm ms-1" data-bs-toggle="modal"
+                data-bs-target="#EditSnack" (click)="SetSnackToEdit(snack)" role="button">Editar</a>
+            </td>
+            <td scope="col">{{snack.snackId}}</td>
+            <td scope="col">{{snack.name}}</td>
+            <td scope="col">{{snack.price}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="deleteSnack" tabindex="-1" aria-labelledby="deleteSnackLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteSnackLabel">Borrar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Estas seguro que deseas borrar este snack?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" (click)="Delete();" data-bs-dismiss="modal">Borrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="EditSnack" tabindex="-1" aria-labelledby="EditSnackLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="EditSnackLabel">Editar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="name" [(ngModel)]="snack.name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Descripción</label>
+                    <textarea type="text" class="form-control" name="description" [(ngModel)]="snack.description"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Precio </label>
+                    <input type="number" class="form-control" name="price" [(ngModel)]="snack.price">
+                </div>
+                <button class="btn btn-primary btn-small" (click)="Confirmar()">Confirmar</button>
+                <a routerLink='/administracion/artistas' class="btn btn-danger btn-small ms-1" role="button">Volver</a>
+            </div>
+
+        </div>
+    </div>
+</div>

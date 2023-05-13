@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System;
 using System.Collections.Generic;
 
 namespace ArenaGestor.APITest
@@ -236,6 +237,22 @@ namespace ArenaGestor.APITest
 
             mock.VerifyAll();
             Assert.AreEqual(StatusCodes.Status200OK, statusCode);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void PutUserLoggedWithoutRoleFailTest()
+        {
+            mock.Setup(x => x.UpdateUser(It.IsAny<string>(), It.IsAny<User>())).Throws<ArgumentException>(); ;
+            mockMapper.Setup(x => x.Map<User>(updateUserDto)).Throws<ArgumentException>(); ;
+            mockMapper.Setup(x => x.Map<UserResultUserDto>(userOK)).Throws<ArgumentException>();
+            api.ControllerContext = new ControllerContext
+            {
+                HttpContext = new DefaultHttpContext()
+            };
+            api.ControllerContext.HttpContext.Request.Headers["token"] = randomToken;
+            var result = api.PutUserLoggedIn(updateUserDto);
+            mock.VerifyAll();
         }
     }
 }

@@ -16,6 +16,9 @@ namespace ArenaGestor.BusinessTest
         private Mock<IConcertsService> concertServiceMock;
         private Mock<ITicketStatusManagement> ticketStatusManagementMock;
         private TicketService ticketService;
+        private Mock<ISnackService> snackServiceMock;
+
+        
 
         private Mock<ISecurityService> securityServiceMock;
 
@@ -48,10 +51,12 @@ namespace ArenaGestor.BusinessTest
             managementMock = new Mock<ITicketManagement>(MockBehavior.Strict);
             concertServiceMock = new Mock<IConcertsService>(MockBehavior.Strict);
             ticketStatusManagementMock = new Mock<ITicketStatusManagement>(MockBehavior.Strict);
+            snackServiceMock = new Mock<ISnackService>(MockBehavior.Strict);
+
 
             securityServiceMock = new Mock<ISecurityService>(MockBehavior.Strict);
 
-            ticketService = new TicketService(concertServiceMock.Object, managementMock.Object, ticketStatusManagementMock.Object, securityServiceMock.Object);
+            ticketService = new TicketService(concertServiceMock.Object, managementMock.Object, ticketStatusManagementMock.Object, securityServiceMock.Object, snackServiceMock.Object);
 
             nullConcert = null;
 

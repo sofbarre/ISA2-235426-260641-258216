@@ -62,5 +62,16 @@ namespace ArenaGestor.APITest
             mock.VerifyAll();
             Assert.AreEqual(StatusCodes.Status200OK, statusCode);
         }
+        [TestMethod]
+        public void LogoutOkArtista()
+        {
+            mock.Setup(x => x.Logout(It.IsAny<string>()));
+            var result = api.Logout(randomToken);
+            var objectResult = result as ObjectResult;
+            var statusCode = objectResult.StatusCode;
+
+            mock.VerifyAll();
+            Assert.AreEqual(StatusCodes.Status200OK, statusCode);
+        }
     }
 }
