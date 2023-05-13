@@ -35,6 +35,9 @@ import { ProtagonistBandsComponent } from './routes/protagonist/protagonist.band
 import { ProtagonistSoloistsComponent } from './routes/protagonist/protagonist.soloists.component';
 import { ProtagonistBandComponent } from './routes/protagonist/protagonist.band.component';
 import { ProtagonistSoloistComponent } from './routes/protagonist/protagonist.soloist.component';
+import { SnackComponent } from './routes/snack/snack/snack.component';
+import { SnackFormComponent } from './routes/snack/snack-form/snack-form.component';
+import { SnackUpdateComponent } from './routes/snack/snack-update/snack-update.component';
 
 const routes: Routes = [
 
@@ -68,6 +71,11 @@ const routes: Routes = [
   { path: 'administracion/conciertos/editar/:id', component: ConcertUpdateComponent, canActivate: [AuthGuard], data: { roles: ['Administrador'] } },
   { path: 'administracion/conciertos/ver/:id', component: ConcertViewComponent },
   { path: 'administracion/conciertos/verbyartista/:id', component: ConcertArtistViewComponent },
+
+  { path: 'administracion/snacks', component: SnackComponent },
+  { path: 'administracion/snacks/insertar', component: SnackFormComponent, canActivate: [AuthGuard], data: { roles: ['Administrador'] } },
+  { path: 'administracion/snacks/editar/:id', component: SnackUpdateComponent, canActivate: [AuthGuard], data: { roles: ['Administrador'] }  },
+  
   { path: 'protagonistas/bandas', component: ProtagonistBandsComponent },
   { path: 'protagonistas/solistas', component: ProtagonistSoloistsComponent },
   { path: 'protagonistas/bandas/ver/:id', component: ProtagonistBandComponent },

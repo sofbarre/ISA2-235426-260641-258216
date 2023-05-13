@@ -10,16 +10,19 @@ namespace ArenaGestor.Business
     public class TicketService : ITicketService
     {
         private IConcertsService concertService;
+        private ISnackService snackService;
+
         private ITicketManagement ticketManagement;
         private ITicketStatusManagement ticketStatusManagement;
         private ISecurityService securityService;
 
-        public TicketService(IConcertsService concertService, ITicketManagement ticketManagement, ITicketStatusManagement ticketStatusManagement, ISecurityService securityService)
+        public TicketService(IConcertsService concertService, ITicketManagement ticketManagement, ITicketStatusManagement ticketStatusManagement, ISecurityService securityService, ISnackService snackService)
         {
             this.concertService = concertService;
             this.ticketManagement = ticketManagement;
             this.ticketStatusManagement = ticketStatusManagement;
             this.securityService = securityService;
+            this.snackService = snackService;
         }
 
         public Ticket SellTicket(TicketSell ticketSell)
@@ -91,6 +94,20 @@ namespace ArenaGestor.Business
                 throw new NullReferenceException("The concert doesn't exists");
             }
 
+            for(int i = 0; i< ticketBuy.snackIds.Length; i++)
+            {
+                if(snackService.GetSnackById(ticketBuy.snackIds[i]) == null)
+                {
+                    throw new NullReferenceException("The snack with id "+ ticketBuy.snackIds[i] + " doesn't exists");
+                }
+            }
+
+            if (concert == null)
+            {
+                throw new NullReferenceException("The concert doesn't exists");
+            }
+
+
             int ticketsSell = concert.Tickets != null && concert.Tickets.Any() ? concert.Tickets.Sum(t => t.Amount) : 0;
 
             if (concert.TicketCount <= ticketsSell)
@@ -119,6 +136,13 @@ namespace ArenaGestor.Business
                 Amount = ticketBuy.Amount
             };
 
+            for (int i = 0; i < ticketBuy.snackIds.Length; i++)
+            {
+                TicketSnack ticketSnack = new TicketSnack();
+                ticketSnack.idSnack = ticketBuy.snackIds[i];
+                ticketSnack.idTicket = ticket.TicketId;
+                ticketManagement.InsertTicketSnack(ticketSnack);
+            }
             ticketManagement.InsertTicket(ticket);
             ticketManagement.Save();
             return ticket;
