@@ -3,6 +3,7 @@ using System.Net.Http.Headers;
 using System.Net;
 using ArenaGestor.Domain;
 using ArenaGestor.APIContracts.Ticket;
+using ArenaGestor.APIContracts.Security;
 
 namespace ArenaGestor.ComprarSnacks.StepDefinitions
 {
@@ -50,7 +51,7 @@ namespace ArenaGestor.ComprarSnacks.StepDefinitions
             ticket.Amount = amount;
         }
 
-          [Given(@"a ConcertId (.*)")]
+        [Given(@"a ConcertId (.*)")]
         public void GivenAConcertId(int id)
         {
             ticket.ConcertId = id;
@@ -66,31 +67,63 @@ namespace ArenaGestor.ComprarSnacks.StepDefinitions
         [When(@"the request of ""(.*)"" is sent")]
         public async Task WhenTheRequestIsSent(string url)
         {
-            string requestBody = JsonConvert.SerializeObject(ticket);
-
-            var request = new HttpRequestMessage(this.httpMethod, $"http://localhost:44372/{url}/Shopping")
+            // Log in
+            var loginRequest = new SecurityLoginDto
             {
-                Content = new StringContent(requestBody)
+                Email = "espectador@example.com",
+                Password = "test"
+            };
+            var loginRequestBody = JsonConvert.SerializeObject(loginRequest);
+            var loginRequestMessage = new HttpRequestMessage(HttpMethod.Post, "https://localhost:44372/Security/login")
+            {
+                Content = new StringContent(loginRequestBody)
                 {
                     Headers =
-                        {
-                          ContentType = new MediaTypeHeaderValue("application/json")
-                        }
+            {
+                ContentType = new MediaTypeHeaderValue("application/json")
+            }
                 }
             };
-            // create an http client
-            var client = new HttpClient();
 
-            var response = await client.SendAsync(request).ConfigureAwait(false);
+            var loginClient = new HttpClient();
+            var loginResponse = await loginClient.SendAsync(loginRequestMessage).ConfigureAwait(false);
+            // Extract the token from the login response
+            var loginResponseContent = await loginResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var securityTokenResponse = JsonConvert.DeserializeObject<SecurityTokenResponseDto>(loginResponseContent);
+            this.ticket.snackIds[0] = 2;
+            var token = securityTokenResponse.Token;
+
+            var shoppingRequestBody = JsonConvert.SerializeObject(ticket);
+
+            var shoppingRequest = new HttpRequestMessage(this.httpMethod, $"https://localhost:44372/{url}/Shopping")
+            {
+                Content = new StringContent(shoppingRequestBody)
+                {
+                    Headers =
+            {
+                ContentType = new MediaTypeHeaderValue("application/json")
+            }
+                }
+            };
+
+            shoppingRequest.Headers.Add("token", token);
+
+            var shoppingClient = new HttpClient();
+            var shoppingResponse = await shoppingClient.SendAsync(shoppingRequest).ConfigureAwait(false);
+
             try
             {
-                context.Set(response.StatusCode, "ResponseStatusCode");
+                context.Set(shoppingResponse.StatusCode, "ResponseStatusCode");
             }
             finally
             {
-                // move along, move along
+                shoppingRequest.Dispose();
+                shoppingClient.Dispose();
             }
         }
+
+
+
 
         [Then("the result should be the code (.*)")]
         public void ThenTheResultShouldBe(int StatusCode)

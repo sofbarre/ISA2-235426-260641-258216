@@ -5,6 +5,7 @@ using ArenaGestor.BusinessInterface;
 using ArenaGestor.Domain;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 namespace ArenaGestor.API.Controllers
@@ -37,12 +38,19 @@ namespace ArenaGestor.API.Controllers
         [HttpPost("Shopping")]
         public IActionResult PostTickets([FromBody] TicketBuyTicketDto buyTicket)
         {
-            var token = this.HttpContext.Request.Headers["token"];
+            try
+            {
+                var token = this.HttpContext.Request.Headers["token"];
 
-            var ticketBuy = mapper.Map<TicketBuy>(buyTicket);
-            Ticket ticket = ticketService.BuyTicket(token, ticketBuy);
-            var resultDto = mapper.Map<TicketBuyTicketResultDto>(ticket);
-            return Ok(resultDto);
+                var ticketBuy = mapper.Map<TicketBuy>(buyTicket);
+                Ticket ticket = ticketService.BuyTicket(token, ticketBuy);
+                var resultDto = mapper.Map<TicketBuyTicketResultDto>(ticket);
+                return Ok(resultDto);
+            }catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+          
         }
 
         [AuthorizationFilter(RoleCode.Acomodador)]
