@@ -356,7 +356,9 @@ namespace ArenaGestor.BusinessTest
             ticketBuyInvalidUser = new TicketBuy()
             {
                 Amount = 1,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
+
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userNull);
@@ -372,7 +374,9 @@ namespace ArenaGestor.BusinessTest
             ticketBuyInvalidConcert = new TicketBuy()
             {
                 Amount = 1,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
+
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
@@ -388,7 +392,9 @@ namespace ArenaGestor.BusinessTest
             ticketBuyNoMoreTickets = new TicketBuy()
             {
                 Amount = 1,
-                ConcertId = concertFullTickets.ConcertId
+                ConcertId = concertFullTickets.ConcertId,
+                snackIds = new int[0]
+
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
@@ -403,7 +409,9 @@ namespace ArenaGestor.BusinessTest
             ticketBuyOK = new TicketBuy()
             {
                 Amount = 1,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
+
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
@@ -425,7 +433,9 @@ namespace ArenaGestor.BusinessTest
             ticketBuyNoMoreTickets = new TicketBuy()
             {
                 Amount = 500,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
+
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
@@ -441,7 +451,8 @@ namespace ArenaGestor.BusinessTest
             ticketBuyOK = new TicketBuy()
             {
                 Amount = 0,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
             };
 
 
@@ -454,7 +465,8 @@ namespace ArenaGestor.BusinessTest
             ticketBuyOK = new TicketBuy()
             {
                 Amount = 1,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
