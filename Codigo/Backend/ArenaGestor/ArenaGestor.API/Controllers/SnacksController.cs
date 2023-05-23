@@ -19,11 +19,9 @@ namespace ArenaGestor.API.Controllers
     [ExceptionFilter]
     public class SnacksController : ControllerBase, ISnackAppService
     { 
-        private readonly IMapper mapper;
         private readonly ISnackService snackService;
-        public SnacksController(IMapper mapper, ISnackService snackService)
+        public SnacksController(ISnackService snackService)
         {
-            this.mapper = mapper;
             this.snackService = snackService;   
         }
         [HttpGet]
