@@ -5,7 +5,7 @@
   "url": "http://localhost:4200/",
   "tests": [{
     "id": "14f9bcf7-5869-4966-bf72-a695c55e889e",
-    "name": "BUG  MODIFICAR ROLES",
+    "name": "1 BUG  MODIFICAR ROLES",
     "commands": [{
       "id": "51b25994-dfcb-4e03-ab2a-6f8f907cff42",
       "comment": "",
@@ -242,7 +242,7 @@
     }]
   }, {
     "id": "04e98029-ea41-4ba0-be5b-d68afbc5aefb",
-    "name": "BUG LOGOUT COMO ARTISTA",
+    "name": "2 BUG LOGOUT COMO ARTISTA",
     "commands": [{
       "id": "92808ac4-5699-49a3-bf8c-58d70369fcfa",
       "comment": "",
@@ -397,7 +397,7 @@
     }]
   }, {
     "id": "4470ed25-9e90-4c19-a7d4-3dd81662a292",
-    "name": "CREAR SNACK EXITO",
+    "name": "3 CREAR SNACK EXITO",
     "commands": [{
       "id": "0ce03121-5a5f-426a-b68e-0fdf649814c2",
       "comment": "",
@@ -617,7 +617,7 @@
     }]
   }, {
     "id": "0d2a7b6b-09c1-4785-92bf-2a63066ea3de",
-    "name": "CREAR SNACK FALLA SIN NOMBRE",
+    "name": "4 CREAR SNACK FALLA SIN NOMBRE",
     "commands": [{
       "id": "0f9807c1-a0f1-49e7-9b88-2f647fbfb4af",
       "comment": "",
@@ -775,7 +775,7 @@
     }]
   }, {
     "id": "0e0f56de-6b2a-448f-b0f2-9f12918b8075",
-    "name": "CREAR SNACK SIN DESCRIPCION",
+    "name": "5 CREAR SNACK SIN DESCRIPCION",
     "commands": [{
       "id": "046e0e44-2cc3-4434-8c50-109ac9b89f50",
       "comment": "",
@@ -873,7 +873,7 @@
     }]
   }, {
     "id": "eefdd570-e504-43a2-8735-c1fc5cac720d",
-    "name": "EDITAR SNACK EXITO",
+    "name": "7 EDITAR SNACK EXITO",
     "commands": [{
       "id": "ed0bce55-99b9-402f-ab11-93976634b234",
       "comment": "",
@@ -976,7 +976,7 @@
     }]
   }, {
     "id": "ecff0e2c-90c9-453a-ac4c-d2d17dbb04b5",
-    "name": "BORRAR SNACK EXITO",
+    "name": "6 BORRAR SNACK EXITO",
     "commands": [{
       "id": "26767e1c-3ac4-4f1a-8a68-418bca27b326",
       "comment": "",
@@ -1025,7 +1025,7 @@
     }]
   }, {
     "id": "614c598a-b21a-4130-839e-ceef2824bb07",
-    "name": "COMPRAR SNACKS Y TICKETS EXITO",
+    "name": "10 COMPRAR SNACKS Y TICKETS EXITO",
     "commands": [{
       "id": "5429a34f-f64e-48fc-aced-47703c26fa9a",
       "comment": "",
@@ -1201,7 +1201,7 @@
     }]
   }, {
     "id": "01bcb360-3c75-4b13-8c8c-4ef8d1dd916e",
-    "name": "COMPRAR SNACK SIN TICKETS FALLA",
+    "name": "9 COMPRAR SNACK SIN TICKETS FALLA",
     "commands": [{
       "id": "b0219c6d-8b34-4148-8494-da9d83fafec2",
       "comment": "",
