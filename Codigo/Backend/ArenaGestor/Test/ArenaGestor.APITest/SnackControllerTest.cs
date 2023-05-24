@@ -24,7 +24,7 @@ namespace ArenaGestor.APITest
 
         private Snack snackOK;
         private IEnumerable<Snack> snacksOK;
-
+        private Snack insertSnackOK;
         private SnackGetDto resultSnackDto;
         private IEnumerable<SnackGetDto> resultSnacksDto;
         private SnackPostDto insertSnackDto;
@@ -40,6 +40,13 @@ namespace ArenaGestor.APITest
             snackOK = new Snack()
             {
                 SnackId=1,
+                Name = "Papas",
+                Description = "Papas fritas Lays",
+                Price = 120,
+            };
+
+            insertSnackOK = new Snack()
+            {
                 Name = "Papas",
                 Description = "Papas fritas Lays",
                 Price = 120,
@@ -72,7 +79,7 @@ namespace ArenaGestor.APITest
         }
 
         [TestMethod]
-        public void GetGenderByIdOkTest()
+        public void GetSnackByIdOkTest()
         {
             mock.Setup(x => x.GetSnackById(snackOK.SnackId)).Returns(snackOK);
 
@@ -85,7 +92,7 @@ namespace ArenaGestor.APITest
         }
 
         [TestMethod]
-        public void GetGendersOkTest()
+        public void GetSnacksOkTest()
         {
             mock.Setup(x => x.GetSnacks()).Returns(snacksOK);
 
@@ -98,12 +105,12 @@ namespace ArenaGestor.APITest
         }
 
         [TestMethod]
-        public void PostGenderOkTest()
+        public void PostSnackOkTest()
         {
-            mock.Setup(x => x.InsertSnack(snackOK));
+            mock.Setup(x => x.InsertSnack(It.IsAny<Snack>()));
 
             var result = api.PostSnack(insertSnackDto);
-            var objectResult = result as ObjectResult;
+            var objectResult = result as OkResult;
             var statusCode = objectResult.StatusCode;
 
             mock.VerifyAll();
@@ -111,12 +118,12 @@ namespace ArenaGestor.APITest
         }
 
         [TestMethod]
-        public void PutGenderOkTest()
+        public void PutSnackOkTest()
         {
-            mock.Setup(x => x.UpdateSnack(snackOK));
+            mock.Setup(x => x.UpdateSnack(It.IsAny<Snack>()));
 
             var result = api.PutSnack(snackOK.SnackId,updateSnackDto);
-            var objectResult = result as ObjectResult;
+            var objectResult = result as OkResult;
             var statusCode = objectResult.StatusCode;
 
             mock.VerifyAll();
@@ -124,7 +131,7 @@ namespace ArenaGestor.APITest
         }
 
         [TestMethod]
-        public void DeleteGenderOkTest()
+        public void DeleteSnackOkTest()
         {
             mock.Setup(x => x.DeleteSnack(It.IsAny<int>()));
             var result = api.DeleteSnack(It.IsAny<int>());
