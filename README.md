@@ -26,7 +26,7 @@
 - Vídeo de la retrospectiva con el "SM"
 - Vídeo de la revisión con el "PO"
 
-## Tercera Entrega
+### Tercera Entrega
 - Nueva versión de pequeña guía de "Definición/uso del proceso de ingeniería en el contexto de KANBAN"
 - Nueva versión de pequeña guía de "Explicación del tablero y su vínculo con el proceso de ingeniería"
 - Nueva versión de pequeña guía de "Configuración del pipeline y su vínculo con el tablero"
@@ -40,7 +40,7 @@
 - Vídeo de la retrospectiva con el "SM"
 - Vídeo de la revisión de las nuevas funcionalidades con el "PO"
 
-## Cuarta Entrega
+### Cuarta Entrega
 - Evidencia de ejecución de casos de prueba
 - Informe de avance de la etapa
 - Detalle de registro de esfuerzo por tipo de tarea, según las actividades del proceso de ingeniería o del tablero, si se prefiere.
@@ -49,5 +49,5 @@
 - Vídeo de la retrospectiva con el "SM"
 - Vídeo de la revisión de los bugs con el "PO"
 
-## Quinta Entrega
+### Quinta Entrega
 - Informe académico final
