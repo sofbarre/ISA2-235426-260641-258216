@@ -74,7 +74,7 @@ namespace ArenaGestor.ComprarSnacks.StepDefinitions
                 Password = "test"
             };
             var loginRequestBody = JsonConvert.SerializeObject(loginRequest);
-            var loginRequestMessage = new HttpRequestMessage(HttpMethod.Post, "https://localhost:44372/Security/login")
+            var loginRequestMessage = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5000/Security/login")
             {
                 Content = new StringContent(loginRequestBody)
                 {
@@ -95,7 +95,7 @@ namespace ArenaGestor.ComprarSnacks.StepDefinitions
 
             var shoppingRequestBody = JsonConvert.SerializeObject(ticket);
 
-            var shoppingRequest = new HttpRequestMessage(this.httpMethod, $"https://localhost:44372/{url}/Shopping")
+            var shoppingRequest = new HttpRequestMessage(this.httpMethod, $"http://localhost:5000/{url}/Shopping")
             {
                 Content = new StringContent(shoppingRequestBody)
                 {
