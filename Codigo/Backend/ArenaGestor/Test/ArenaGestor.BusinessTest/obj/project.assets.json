@@ -9381,24 +9381,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sbarreto\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\bruno\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\Test\\ArenaGestor.BusinessTest\\ArenaGestor.BusinessTest.csproj",
+      "projectUniqueName": "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\Test\\ArenaGestor.BusinessTest\\ArenaGestor.BusinessTest.csproj",
       "projectName": "ArenaGestor.BusinessTest",
-      "projectPath": "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\Test\\ArenaGestor.BusinessTest\\ArenaGestor.BusinessTest.csproj",
-      "packagesPath": "C:\\Users\\sbarreto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\Test\\ArenaGestor.BusinessTest\\obj\\",
+      "projectPath": "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\Test\\ArenaGestor.BusinessTest\\ArenaGestor.BusinessTest.csproj",
+      "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
+      "outputPath": "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\Test\\ArenaGestor.BusinessTest\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\sbarreto\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9412,14 +9407,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.Business\\ArenaGestor.Business.csproj": {
-              "projectPath": "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.Business\\ArenaGestor.Business.csproj"
+            "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.Business\\ArenaGestor.Business.csproj": {
+              "projectPath": "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.Business\\ArenaGestor.Business.csproj"
             },
-            "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.DataAccessInterface\\ArenaGestor.DataAccessInterface.csproj": {
-              "projectPath": "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.DataAccessInterface\\ArenaGestor.DataAccessInterface.csproj"
+            "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.DataAccessInterface\\ArenaGestor.DataAccessInterface.csproj": {
+              "projectPath": "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.DataAccessInterface\\ArenaGestor.DataAccessInterface.csproj"
             },
-            "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.Domain\\ArenaGestor.Domain.csproj": {
-              "projectPath": "C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.Domain\\ArenaGestor.Domain.csproj"
+            "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.Domain\\ArenaGestor.Domain.csproj": {
+              "projectPath": "C:\\Facultad\\semestre7\\ISA2\\1erObligatorio\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\ArenaGestor.Domain\\ArenaGestor.Domain.csproj"
             }
           }
         }
@@ -9474,13 +9469,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\sbarreto\\Documents\\Clase\\isa2\\ISA2-235426-260641-258216\\Codigo\\Backend\\ArenaGestor\\Test\\ArenaGestor.BusinessTest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
