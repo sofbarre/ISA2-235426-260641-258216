@@ -2,10 +2,14 @@
 using ArenaGestor.BusinessInterface;
 using ArenaGestor.DataAccessInterface;
 using ArenaGestor.Domain;
+using Microsoft.Extensions.FileSystemGlobbing.Internal.PathSegments;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
+using System.Xml.Linq;
 
 namespace ArenaGestor.BusinessTest
 {
@@ -44,6 +48,9 @@ namespace ArenaGestor.BusinessTest
         private TicketBuy ticketBuyNoMoreTickets;
         private TicketBuy ticketBuyOK;
         private TicketBuy ticketBuyNull;
+
+        private Snack snackOk;
+
 
         [TestInitialize]
         public void InitTest()
@@ -102,6 +109,15 @@ namespace ArenaGestor.BusinessTest
                 Email = "test@user.com",
                 ConcertId = concertOk.ConcertId,
                 Amount = 1
+            };
+
+            snackOk = new Snack()
+            {
+                SnackId = 0,
+                Name = "snack ok",
+                Description = "papas fritas",
+                Price = 20
+
             };
 
             concertOk.Tickets = new List<Ticket>()
@@ -356,7 +372,9 @@ namespace ArenaGestor.BusinessTest
             ticketBuyInvalidUser = new TicketBuy()
             {
                 Amount = 1,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
+
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userNull);
@@ -372,7 +390,9 @@ namespace ArenaGestor.BusinessTest
             ticketBuyInvalidConcert = new TicketBuy()
             {
                 Amount = 1,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
+
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
@@ -388,7 +408,9 @@ namespace ArenaGestor.BusinessTest
             ticketBuyNoMoreTickets = new TicketBuy()
             {
                 Amount = 1,
-                ConcertId = concertFullTickets.ConcertId
+                ConcertId = concertFullTickets.ConcertId,
+                snackIds = new int[0]
+
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
@@ -403,7 +425,9 @@ namespace ArenaGestor.BusinessTest
             ticketBuyOK = new TicketBuy()
             {
                 Amount = 1,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
+
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
@@ -425,7 +449,9 @@ namespace ArenaGestor.BusinessTest
             ticketBuyNoMoreTickets = new TicketBuy()
             {
                 Amount = 500,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
+
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
@@ -441,7 +467,8 @@ namespace ArenaGestor.BusinessTest
             ticketBuyOK = new TicketBuy()
             {
                 Amount = 0,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
             };
 
 
@@ -454,7 +481,8 @@ namespace ArenaGestor.BusinessTest
             ticketBuyOK = new TicketBuy()
             {
                 Amount = 1,
-                ConcertId = concertOk.ConcertId
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[0]
             };
 
             securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
@@ -467,6 +495,54 @@ namespace ArenaGestor.BusinessTest
             concertServiceMock.VerifyAll();
             managementMock.VerifyAll();
         }
+
+
+        [TestMethod]
+        public void BuyTicketWithSnacksOkTest()
+        {
+            ticketBuyOK = new TicketBuy()
+            {
+                Amount = 1,
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[2]
+            };
+
+            securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
+
+            ticketStatusManagementMock.Setup(x => x.GetStatus(It.IsAny<TicketCode>())).Returns(buyedStatus);
+            concertServiceMock.Setup(x => x.GetConcertById(It.IsAny<int>())).Returns(concertOk);
+            managementMock.Setup(x => x.InsertTicket(It.IsAny<Ticket>()));
+            managementMock.Setup(x => x.Save());
+            managementMock.Setup(x => x.InsertTicketSnack(It.IsAny<TicketSnack>()));
+            snackServiceMock.Setup(x => x.GetSnackById(It.IsAny<int>())).Returns(snackOk);
+            Ticket ticket = ticketService.BuyTicket(It.IsAny<string>(), ticketBuyOK);
+            concertServiceMock.VerifyAll();
+            managementMock.VerifyAll();
+        }
+
+        [TestMethod]
+        public void BuyTicketWith100SnacksOkTest()
+        {
+            ticketBuyOK = new TicketBuy()
+            {
+                Amount = 1,
+                ConcertId = concertOk.ConcertId,
+                snackIds = new int[100]
+            };
+
+            securityServiceMock.Setup(x => x.GetUserOfToken(It.IsAny<string>())).Returns(userOk);
+
+            ticketStatusManagementMock.Setup(x => x.GetStatus(It.IsAny<TicketCode>())).Returns(buyedStatus);
+            concertServiceMock.Setup(x => x.GetConcertById(It.IsAny<int>())).Returns(concertOk);
+            managementMock.Setup(x => x.InsertTicket(It.IsAny<Ticket>()));
+            managementMock.Setup(x => x.Save());
+            managementMock.Setup(x => x.InsertTicketSnack(It.IsAny<TicketSnack>()));
+            snackServiceMock.Setup(x => x.GetSnackById(It.IsAny<int>())).Returns(snackOk);
+            Ticket ticket = ticketService.BuyTicket(It.IsAny<string>(), ticketBuyOK);
+            concertServiceMock.VerifyAll();
+            managementMock.VerifyAll();
+        }
+
 
         [ExpectedException(typeof(ArgumentException))]
         [TestMethod]

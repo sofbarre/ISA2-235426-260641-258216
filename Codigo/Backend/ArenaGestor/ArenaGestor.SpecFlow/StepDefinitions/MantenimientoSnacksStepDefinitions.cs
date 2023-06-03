@@ -72,7 +72,7 @@ namespace ArenaGestor.SpecFlow.StepDefinitions
         {
             string requestBody = JsonConvert.SerializeObject(snack);
 
-            var request = new HttpRequestMessage(this.httpMethod, $"http://localhost:48227/{url + routeParams}")
+            var request = new HttpRequestMessage(this.httpMethod, $"http://localhost:5000/{url + routeParams}")
             {
                 Content = new StringContent(requestBody)
                 {
